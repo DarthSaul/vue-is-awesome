@@ -1,0 +1,27 @@
+#app {
+	padding: 1em;
+	background-color: rgba(122, 225, 190, 0.872);
+}
+
+.wrapper {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: auto;
+}
+
+.pokemon {
+	background-color: rgba(255, 255, 255, 0.934);
+	padding: 1em;
+	margin: 0.5em;
+	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.18);
+	border-radius: 8px;
+}
+
+.pokemon ul {
+	list-style: none;
+	padding: 0;
+	margin-top: -0.5em;
+}
+.pokemon ul li {
+	margin-bottom: 0.25em;
+}
