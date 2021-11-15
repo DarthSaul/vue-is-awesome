@@ -1,19 +1,19 @@
 {
-  "name": "vue-is-awesome",
-  "version": "1.0.0",
-  "description": "vue.js testing playground",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DarthSaul/vue-is-awesome.git"
-  },
-  "author": "saul graves",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/DarthSaul/vue-is-awesome/issues"
-  },
-  "homepage": "https://github.com/DarthSaul/vue-is-awesome#readme"
+	"name": "vue-is-awesome",
+	"version": "1.0.0",
+	"description": "vue.js testing playground",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/DarthSaul/vue-is-awesome.git"
+	},
+	"author": "saul graves",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/DarthSaul/vue-is-awesome/issues"
+	},
+	"homepage": "https://github.com/DarthSaul/vue-is-awesome#readme"
 }
