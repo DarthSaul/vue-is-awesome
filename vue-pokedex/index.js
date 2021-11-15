@@ -10,7 +10,7 @@ Vue.component('pokemon', {
 	},
 	template: `
     <div class='pokemon'>
-        <h1>{{name}}</h1>
+        <h1>{{ name }}</h1>
         <p>Pokedex ID #{{id}}</p>
         <p>Types:</p>
         <ul class='types'>
@@ -23,7 +23,8 @@ Vue.component('pokemon', {
 	data() {
 		return {
 			id: null,
-			name: this.initName,
+			name:
+				this.initName.charAt(0).toUpperCase() + this.initName.slice(1),
 			url: this.initUrl,
 			types: [],
 			weaknesses: [],
@@ -34,6 +35,11 @@ Vue.component('pokemon', {
 			},
 		};
 	},
+	// methods: {
+	// 	capitalize(word) {
+	// 		word ? '' : word.charAt(0).toUpperCase() + this.word.slice(1);
+	// 	},
+	// },
 	mounted() {
 		axios.get(this.url).then((res) => {
 			this.id = res.data.id;
