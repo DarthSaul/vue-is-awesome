@@ -1,5 +1,22 @@
 <template>
   <q-page class="bg-grey-3 column">
+    <div class="row q-pa-sm bg-primary">
+      <q-input
+        v-model="newTask"
+        filled
+        dense
+        bg-color="white"
+        class="col"
+        square
+        placeholder="Add new task"
+        @keyup.enter="addTask"
+      >
+        <template v-slot:append>
+          <q-btn round dense flat icon="add" @click="addTask" />
+        </template>
+      </q-input>
+    </div>
+
     <q-list class="bg-white" separator bordered>
       <q-item
         v-for="(task, ind) in tasks"
@@ -27,6 +44,10 @@
         </q-item-section>
       </q-item>
     </q-list>
+    <div class="no-tasks absolute-center" v-if="!tasks.length">
+      <q-icon name="check" size="100px" color="primary" />
+      <div class="text-h5 text-primary text-center">No tasks</div>
+    </div>
   </q-page>
 </template>
 
@@ -36,6 +57,7 @@ import { defineComponent } from "vue";
 export default defineComponent({
   data() {
     return {
+      newTask: "",
       tasks: [
         {
           title: "Groceries",
@@ -63,7 +85,16 @@ export default defineComponent({
         })
         .onOk(() => {
           this.tasks.splice(index, 1);
+          this.$q.notify("Task deleted.");
         });
+    },
+    addTask() {
+      let task = {
+        title: this.newTask,
+        done: false,
+      };
+      this.tasks.push(task);
+      this.newTask = "";
     },
   },
 });
@@ -75,5 +106,8 @@ export default defineComponent({
     text-decoration: line-through;
     color: #8a8989;
   }
+}
+.no-tasks {
+  opacity: 0.5;
 }
 </style>
