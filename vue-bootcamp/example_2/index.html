@@ -16,10 +16,12 @@
 				<div>
 					<label for="name">Name</label>
 					<input name="name" id="name" v-model="formData.name" />
+					<p>{{validName}}</p>
 				</div>
 				<div>
 					<label for="email">Email</label>
 					<input name="email" id="email" v-model="formData.email" />
+					<p>{{validEmail}}</p>
 				</div>
 				<div>
 					<label for="message">Message</label>
@@ -28,6 +30,7 @@
 						id="message"
 						v-model="formData.message"
 					></textarea>
+					<p>{{validMsg}}</p>
 				</div>
 				<button @click.prevent="validateForm()">Send Form</button>
 			</form>
