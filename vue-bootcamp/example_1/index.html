@@ -8,13 +8,19 @@
 		<title>Example 1</title>
 	</head>
 	<body>
-		<div id="app">
+		<div id="app" :class="color">
 			<h1>{{exclamationTitle}}</h1>
 			<p>{{desc}}</p>
 			<a :href="link.url">{{link.desc}}</a>
 			<div>
 				<input type="text" v-model="name" />
 				<p>{{exclamationName}}</p>
+			</div>
+			<div>
+				<!-- Setter -->
+				<input type="text" v-model="computedName" />
+				<!-- Getter -->
+				<p>Current nameTwo value is {{computedName}}</p>
 			</div>
 		</div>
 

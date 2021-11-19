@@ -8,6 +8,8 @@ const app = new Vue({
 			desc: 'Visit Vue',
 		},
 		name: '',
+		color: 'blue',
+		nameTwo: '',
 	},
 	computed: {
 		exclamationTitle() {
@@ -15,6 +17,14 @@ const app = new Vue({
 		},
 		exclamationName() {
 			return this.name + '!';
+		},
+		computedName: {
+			get: function () {
+				return this.nameTwo;
+			},
+			set: function (newVal) {
+				this.nameTwo = newVal;
+			},
 		},
 	},
 });
