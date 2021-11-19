@@ -12,15 +12,34 @@
 			<h1>{{exclamationTitle}}</h1>
 			<p>{{desc}}</p>
 			<a :href="link.url">{{link.desc}}</a>
-			<div>
+			<div class="mt border">
 				<input type="text" v-model="name" />
 				<p>{{exclamationName}}</p>
 			</div>
-			<div>
+			<div class="mt border">
 				<!-- Setter -->
 				<input type="text" v-model="computedName" />
 				<!-- Getter -->
 				<p>Current nameTwo value is {{computedName}}</p>
+			</div>
+			<div class="mt border">
+				<input name="field" v-model="field" />
+				<p>The current value is {{ field }}</p>
+				<button @click="modified">Click ME</button>
+			</div>
+			<div class="mt border">
+				<input type="text" v-model="name" />
+				<!-- <p>{{printNameOne}}</p> -->
+				<p>{{printNameTwo()}}</p>
+			</div>
+			<div class="mt border">
+				<button @click="counterComputed++">computed button</button>
+				<p>{{ counterComputed }}</p>
+				<br />
+				<button @click="counterMethod++">method button</button>
+				<p>{{ counterMethod }}</p>
+				<br />
+				{{ printTextMethod() }} {{ printTextComputed }}
 			</div>
 		</div>
 

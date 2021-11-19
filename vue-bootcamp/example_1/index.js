@@ -8,8 +8,11 @@ const app = new Vue({
 			desc: 'Visit Vue',
 		},
 		name: '',
-		color: 'blue',
+		color: '',
 		nameTwo: '',
+		field: '',
+		counterComputed: 0,
+		counterMethod: 0,
 	},
 	computed: {
 		exclamationTitle() {
@@ -20,11 +23,31 @@ const app = new Vue({
 		},
 		computedName: {
 			get: function () {
+				// console.log('running one...');
 				return this.nameTwo;
 			},
 			set: function (newVal) {
 				this.nameTwo = newVal;
 			},
+		},
+		printNameOne() {
+			console.log('running one...');
+			return this.name;
+		},
+		printTextComputed() {
+			console.log('counter printed from computed', this.counterComputed);
+		},
+	},
+	methods: {
+		modified: function () {
+			this.field += '!';
+		},
+		printNameTwo() {
+			// console.log('running two...');
+			return this.name;
+		},
+		printTextMethod() {
+			console.log('counter printed from method', this.counterMethod);
 		},
 	},
 });
