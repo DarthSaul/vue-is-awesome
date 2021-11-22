@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+			rel="stylesheet"
+		/>
+		<title>Example 3</title>
+	</head>
+	<body>
+		<div
+			id="app"
+			class="
+				bg-blue-300
+				flex flex-col
+				justify-center
+				items-center
+				h-screen
+				w-full
+			"
+		>
+			<!-- <div v-once>Old: {{message}}</div>
+			<div>New: {{message}}</div> -->
+			<!-- <input v-model="message" /> -->
+
+			<!-- <div v-html="message"></div>
+			<div :title="'helllooooo' + message ">
+				{{ isAdmin ? 'IS ADMIN' : 'IS NOT AN ADMIN'}}
+			</div> -->
+
+			<!-- <div>{{ example }}</div> -->
+
+			<!-- Only Once -->
+			<!-- <div v-once>{{onlyOnce}}</div> -->
+
+			<!-- Sample HTML -->
+			<!-- <div v-html="sampleHtml"></div> -->
+
+			<!-- Output 'text' without curly braces -->
+			<!-- <div v-text="text"></div> -->
+
+			<!-- If answer is true, output 'Correct!'. Otherwise, 'Wrong!' -->
+			<!-- <div>{{answer ? 'Correct!' : 'Wrong!'}}</div> -->
+
+			<!-- Output: 'My dog is 9 years old' -->
+			<!-- <div>{{'My dog is ' + age + ' years old'}}</div> -->
+
+			<!-- What is the area of this circle? (HINT: πr^2) -->
+			<!-- Where π = 3.14 -->
+			<!-- <div>{{3.14 * (circleRadius * circleRadius) }}</div> -->
+
+			<!-- Add a title attribute to show the explain text. -->
+			<!-- Add the string 'Hello! ' on the fly before the text -->
+			<!-- <div :title="'Hello! ' + explain">Hover Over Me</div> -->
+
+			<!-- <template v-if="box">
+				<div class="w-20 h-20 bg-red-700"></div>
+				<div class="w-20 h-20 bg-red-700"></div>
+				<div class="w-20 h-20 bg-red-700"></div>
+			</template> -->
+
+			<!-- <div v-if="false" class="w-20 h-20 bg-red-700"></div>
+			<div v-else-if="true" class="w-20 h-20 bg-blue-700"></div>
+			<div v-else class="w-20 h-20 bg-green-700"></div> -->
+
+			<!-- <div
+				v-if="modal"
+				class="absolute top-0 w-full bg-green-200 text-center py-2"
+			>
+				Here's some more information.
+				<button @click.prevent="modal = false">X</button>
+			</div>
+			<button @click.prevent="modal = !modal" class="bg-green-200 p-2">
+				{{modal ? 'Close' : 'Open'}} Modal
+			</button> -->
+
+			<!-- <p class="text-xs mb-8">0-5 = GOOD; 6-8 = WARNING; 9-10 = DANGER</p>
+			<p>Current Status: {{status}}</p>
+
+			<div v-if="status <= 5" class="w-32 bg-green-200 text-center py-2">
+				GOOD
+			</div>
+
+			<div
+				v-else-if="status >= 6 && status <= 8"
+				class="w-32 bg-yellow-200 text-center py-2"
+			>
+				WARNING
+			</div>
+
+			<div v-else class="w-32 bg-red-200 text-center py-2">DANGER</div>
+
+			<div class="text-xl mt-4">
+				<button
+					v-if="status > 0"
+					@click="status --"
+					class="px-3 border rounded"
+				>
+					-
+				</button>
+				<button
+					v-if="status < 10"
+					@click="status ++"
+					class="px-3 border rounded"
+				>
+					+
+				</button>
+			</div> -->
+
+			<h1 class="mb-3 font-bold uppercase">My Todo list</h1>
+			<div class="mb-4">
+				<input type="text" v-model="formData.text" />
+				<button @click.prevent="addItem">Add</button>
+			</div>
+			<div>
+				<ul>
+					<li v-for="(item, ind) in items" :key="ind">
+						{{ind + 1}}: {{item}}
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+		<script src="index.js"></script>
+	</body>
+</html>
