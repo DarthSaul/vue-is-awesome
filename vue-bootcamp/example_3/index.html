@@ -8,6 +8,18 @@
 			href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
 			rel="stylesheet"
 		/>
+
+		<style>
+			.red {
+				color: red;
+			}
+			.big {
+				font-size: 100px;
+			}
+			.underline {
+				text-decoration: underline;
+			}
+		</style>
 		<title>Example 3</title>
 	</head>
 	<body>
@@ -110,7 +122,7 @@
 				</button>
 			</div> -->
 
-			<h1 class="mb-3 font-bold uppercase">My Todo list</h1>
+			<!-- <h1 class="mb-3 font-bold uppercase">My Todo list</h1>
 			<div class="mb-4">
 				<input type="text" v-model="formData.text" />
 				<button @click.prevent="addItem">Add</button>
@@ -121,7 +133,24 @@
 						{{ind + 1}}: {{item}}
 					</li>
 				</ul>
-			</div>
+			</div> -->
+			<!-- <div :class="[{ green: isActive}, 'large-text']">Hello</div> -->
+			<!-- <div :style="styleObject">Hi There</div> -->
+
+			<!-- Red Text if 5 > 1 -->
+			<div :class="{red: 5 > 1}">Text 1</div>
+
+			<!-- Use size for text size (inline) -->
+			<div :style="{fontSize: size + 'px'}">Text 2</div>
+
+			<!-- underline and red text if toggle is true -->
+			<div :class="[ toggle && 'underline red' ]">Text 3</div>
+
+			<!-- orange text (inline) -->
+			<div :style="{ color: 'orange'}">Text 4</div>
+
+			<!-- red if toggle is true, otherwise big. Always underline -->
+			<div :class="[toggle ? 'red' : 'big', 'underline']">Text 5</div>
 		</div>
 
 		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
