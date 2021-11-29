@@ -34,7 +34,7 @@ export default {
 	color: #dff1f5;
 	padding: 15px;
 	width: 200px;
-	height: 200px;
+	height: auto;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
