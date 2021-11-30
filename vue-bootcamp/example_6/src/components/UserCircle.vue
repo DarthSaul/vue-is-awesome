@@ -6,7 +6,10 @@
 
 <script>
 export default {
-	props: { fullName: String },
+	props: {
+		fullName: String,
+		isPublished: [Boolean, Number],
+	},
 	data() {
 		return {};
 	},

@@ -1,7 +1,7 @@
 <template>
 	<div class="card rounded-lg">
 		<div class="card-title mb-3">Your Instructor</div>
-		<UserCircle :fullName="name" />
+		<UserCircle :fullName="name" :isPublished="1" />
 		<div class="card-name">
 			<div class="light-font">{{ splitName[0] }}</div>
 			<div>{{ splitName[1] }}</div>
