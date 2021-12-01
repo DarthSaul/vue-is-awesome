@@ -1,14 +1,15 @@
 <template>
-	<div
-		id="app"
-		class="bg-gray-200 w-full h-screen flex flex-col items-center p-4"
-	>
+	<div id="app">
 		<!-- <img alt="Vue logo" src="./assets/logo.png"> -->
 		<!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
 		<!-- <FirstEvent /> -->
 		<!-- <CustomEvents /> -->
 		<!-- <Todo /> -->
-		<Form />
+		<!-- <Form /> -->
+		<!-- <ComponentA /> -->
+		<!-- <ComponentB /> -->
+		<!-- <ComponentC /> -->
+		<ShoppingCartModule />
 	</div>
 </template>
 
@@ -17,7 +18,11 @@
 // import FirstEvent from './components/FirstEvent.vue';
 // import CustomEvents from './components/CustomEvents.vue';
 // import Todo from './components/Todo.vue';
-import Form from './components/Form.vue';
+// import Form from './components/Form.vue';
+// import ComponentA from './components/ComponentA.vue';
+// import ComponentB from './components/ComponentB.vue';
+// import ComponentC from './components/ComponentC.vue';
+import ShoppingCartModule from './components/ShoppingCartModule.vue';
 
 export default {
 	name: 'App',
@@ -26,7 +31,11 @@ export default {
 		// FirstEvent,
 		// CustomEvents,
 		// Todo,
-		Form,
+		// Form,
+		// ComponentA,
+		// ComponentB,
+		// ComponentC,
+		ShoppingCartModule,
 	},
 };
 </script>
