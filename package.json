@@ -15,5 +15,6 @@
 	"bugs": {
 		"url": "https://github.com/DarthSaul/vue-is-awesome/issues"
 	},
-	"homepage": "https://github.com/DarthSaul/vue-is-awesome#readme"
+	"homepage": "https://github.com/DarthSaul/vue-is-awesome#readme",
+	"dependencies": {}
 }

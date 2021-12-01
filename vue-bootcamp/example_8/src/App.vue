@@ -1,23 +1,23 @@
 <template>
-	<div
-		id="app"
-		class="bg-gray-300 flex flex-col justify-center items-center h-screen"
-	>
+	<div id="app" class="bg-blue-200">
 		<!-- <p v-if="loading">Loading...</p> -->
 		<!-- <PokeIndex v-else :pokemon="pokemon" /> -->
-		<LifecycleEvents />
+		<!-- <LifecycleEvents /> -->
+		<Router />
 	</div>
 </template>
 
 <script>
 // import PokeIndex from './components/PokeIndex.vue';
-import LifecycleEvents from './components/LifecycleEvents.vue';
+// import LifecycleEvents from './components/LifecycleEvents.vue';
+import Router from './components/Router.vue';
 
 export default {
 	name: 'App',
 	components: {
 		// PokeIndex,
-		LifecycleEvents,
+		// LifecycleEvents,
+		Router,
 	},
 	// beforeCreate() {
 	// 	console.log('Before create...');
@@ -54,6 +54,7 @@ export default {
 	-moz-osx-font-smoothing: grayscale;
 	text-align: center;
 	color: #2c3e50;
+	height: 100vh;
 	/* margin-top: 60px; */
 }
 </style>
