@@ -1,26 +1,31 @@
 <template>
 	<div class="product-wrapper">
 		<div class="product-image">
-			<img :src="image" alt="#" />
+			<img :src="product.image" alt="#" />
 		</div>
-		<div class="product-name">{{ name }}</div>
+		<div class="product-name">{{ product.name }}</div>
 		<div class="product-price">{{ priceFormatted }}</div>
 		<div>
-			<button>ADD</button>
+			<button @click.prevent="handleClick">ADD</button>
 		</div>
 	</div>
 </template>
 
 <script>
+import EventBus from '../bus';
+
 export default {
 	props: {
-		name: String,
-		price: Number,
-		image: String,
+		product: Object,
 	},
 	computed: {
 		priceFormatted() {
-			return '$' + this.price / 100;
+			return '$' + this.product.price / 100;
+		},
+	},
+	methods: {
+		handleClick() {
+			EventBus.$emit('add-product', this.product);
 		},
 	},
 };
