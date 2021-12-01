@@ -27,23 +27,26 @@ export default {
 			products: [
 				{
 					id: 1,
-					qty: 1,
 					name: 'Colorful Cups',
 					price: 499,
 					image: 'https://images.unsplash.com/photo-1611274757139-03ff1736701d',
 				},
 				{
 					id: 2,
-					qty: 1,
 					name: 'Coffee & Home',
 					price: 999,
 					image: 'https://images.unsplash.com/photo-1578250036464-069746676fdd',
 				},
 				{
 					id: 3,
-					qty: 1,
 					name: 'Old Red Friend',
 					price: 2000,
+					image: 'https://images.unsplash.com/photo-1561150547-f70dea3fa4f3',
+				},
+				{
+					id: 4,
+					name: 'Another Product',
+					price: 5000,
 					image: 'https://images.unsplash.com/photo-1561150547-f70dea3fa4f3',
 				},
 			],
@@ -52,12 +55,14 @@ export default {
 	},
 	mounted() {
 		EventBus.$on('add-product', (product) => {
-			if (this.cart.find((el) => el.id == product.id)) {
-				this.cart[this.cart.findIndex((el) => el.id == product.id)]
-					.qty++;
-			} else {
-				this.cart.push(product);
+			let productIndex = this.cart.findIndex((el) => el.id == product.id);
+			if (productIndex >= 0) {
+				return this.cart[productIndex].qty++;
 			}
+			this.cart.push({
+				...product,
+				qty: 1,
+			});
 		});
 	},
 };

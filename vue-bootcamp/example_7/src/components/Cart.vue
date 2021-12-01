@@ -14,22 +14,30 @@
 
 		<div class="price-row">
 			<div class="price-label">Sub-total</div>
-			<div class="price-wrapper">{{ priceFormatted(subTotal) }}</div>
+			<div class="price-wrapper">
+				<span v-if="subTotal > 0">{{ priceFormatted(subTotal) }}</span>
+				<span v-else>N/A</span>
+			</div>
 		</div>
 		<div class="price-row">
 			<div class="price-label">Shipping</div>
-			<div class="price-wrapper">$9.99</div>
+			<div class="price-wrapper">
+				<span v-if="subTotal > 0">{{ priceFormatted(shipping) }}</span>
+				<span v-else>TBD</span>
+			</div>
 		</div>
 		<div class="price-row">
 			<div class="price-label">Total</div>
-			<div class="price-wrapper">{{ priceFormatted(total) }}</div>
+			<div class="price-wrapper">
+				<span v-if="subTotal > 0">{{ priceFormatted(total) }}</span>
+				<span v-else>N/A</span>
+			</div>
 		</div>
 		<button class="checkout-button">CHECKOUT</button>
 	</div>
 </template>
 
 <script>
-// import EventBus from '../bus';
 export default {
 	props: {
 		cart: Array,
@@ -45,12 +53,11 @@ export default {
 				return 0;
 			}
 		},
+		shipping() {
+			return this.cart.reduce((acc, curVal) => acc + curVal.qty * 399, 0);
+		},
 		total() {
-			if (this.subTotal) {
-				return this.subTotal + 999;
-			} else {
-				return 0;
-			}
+			return this.subTotal ? this.subTotal + this.shipping : 0;
 		},
 	},
 	methods: {
