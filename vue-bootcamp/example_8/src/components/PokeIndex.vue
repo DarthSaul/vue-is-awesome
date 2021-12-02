@@ -1,10 +1,10 @@
 <template>
-	<div>
-		<h1>Pokedex</h1>
+	<div class="mt-10">
+		<h1 class="text-4xl">Pokedex</h1>
 		<p v-if="loading" class="mt-5">Loading...</p>
 		<ul v-else class="mt-5">
 			<li v-for="(item, ind) in pokemon" :key="ind">
-				<Pokemon :pokeData="item" />
+				<Pokemon :pokeData="item" :index="ind + 1" />
 			</li>
 		</ul>
 	</div>
@@ -44,7 +44,11 @@ ul {
 	justify-content: space-evenly;
 }
 li {
-	margin: 0.25em;
+	margin: 0.75em;
+	padding: 1em;
 	text-align: center;
+	background-color: rgba(255, 243, 213, 0.5);
+	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.08);
+	border-radius: 0 12px 12px;
 }
 </style>

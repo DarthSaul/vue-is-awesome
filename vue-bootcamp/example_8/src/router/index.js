@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import Pokemon from '../views/Pokemon.vue';
+import Landing from '../views/Landing.vue';
 
 Vue.use(VueRouter);
 
@@ -12,7 +13,7 @@ const routes = [
 		component: Home,
 	},
 	{
-		path: '/about',
+		path: '/about/:id',
 		name: 'About',
 		// route level code-splitting
 		// this generates a separate chunk (about.[hash].js) for this route
@@ -22,8 +23,29 @@ const routes = [
 	},
 	{
 		path: '/pokemon',
-		name: 'Pokemon',
 		component: Pokemon,
+		children: [
+			{
+				path: '',
+				component: () => import('../components/PokeIndex.vue'),
+			},
+			{
+				path: ':id',
+				component: () => import('../components/PokemonTwo.vue'),
+			},
+		],
+	},
+	{
+		path: '/landing',
+		component: Landing,
+		children: [
+			{ path: '', component: () => import('../views/HomePage.vue') },
+			{ path: 'about', component: () => import('../views/About.vue') },
+			{
+				path: 'services',
+				component: () => import('../views/Services.vue'),
+			},
+		],
 	},
 ];
 
