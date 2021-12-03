@@ -13,7 +13,6 @@ export default {
 	},
 	mutations: {
 		setMessage(state, text) {
-			console.log('mutation');
 			state.message = text;
 		},
 		resetPrefix(state) {

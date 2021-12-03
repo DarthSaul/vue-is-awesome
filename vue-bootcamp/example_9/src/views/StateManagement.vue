@@ -4,12 +4,18 @@
 		<input type="text" v-model="value" />
 		<button @click.prevent="update">UPDATE STATE</button>
 		<button @click.prevent="reset">RESET STATE</button>
+
+		<div>
+			<button @click.prevent="takeAction">Action</button>
+		</div>
+
 		<div class="poke">
 			<button @click.prevent="fetchPokemon">Get Bulbasaur</button>
 			<div v-if="getPokemon">
 				<p>{{ getPokemon.name }}</p>
 			</div>
 		</div>
+
 		<InputField field="msg" />
 		<InputField field="amount" />
 		<Listener />
@@ -44,6 +50,9 @@ export default {
 		},
 		fetchPokemon() {
 			this.$store.dispatch('fetchPokemon');
+		},
+		takeAction() {
+			this.$store.dispatch('newAction');
 		},
 	},
 };
