@@ -18,7 +18,26 @@ const routes = [
 	},
 	{
 		path: '/state',
+		name: 'State',
 		component: () => import('../views/StateManagement.vue'),
+		children: [],
+	},
+	{
+		path: '/advanced',
+		name: 'Advanced',
+		component: () => import('../views/Advanced.vue'),
+		children: [],
+	},
+	{
+		path: '/transitions',
+		name: 'Transitions',
+		component: () => import('../views/Transitions.vue'),
+		children: [],
+	},
+	{
+		path: '/filters',
+		name: 'Filters',
+		component: () => import('../views/Filters.vue'),
 		children: [],
 	},
 ];

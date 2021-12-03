@@ -3,7 +3,10 @@
 		<div id="nav">
 			<router-link to="/">Home</router-link> |
 			<router-link to="/about">About</router-link> |
-			<router-link to="/state">Vuex</router-link>
+			<router-link to="/state">Vuex</router-link> |
+			<router-link to="/advanced">Advanced</router-link> |
+			<router-link to="/transitions">Transitions</router-link> |
+			<router-link to="/filters">Filters</router-link>
 		</div>
 		<router-view />
 	</div>
