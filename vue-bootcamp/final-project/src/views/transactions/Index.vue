@@ -8,11 +8,20 @@
 			class="transaction"
 		>
 			<div class="flex">
-				<div class="w-20">{{ item.type }}</div>
+				<div class="w-20">
+					<PlusSign
+						v-if="item.type == 'credit'"
+						class="text-green-500"
+					/>
+					<MinusSign v-else class="text-red-500" />
+				</div>
 				<div>{{ item.description.substring(0, 20) }}</div>
 			</div>
-			<div>
-				{{ formatMoney(item.amount) }}
+			<div class="flex">
+				<div class="mr-4">{{ formatMoney(item.amount) }}</div>
+				<div>
+					<button @click.prevent="removeTransaction(ind)">X</button>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -20,10 +29,23 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import PlusSign from '@/components/ui/PlusSign';
+import MinusSign from '@/components/ui/MinusSign';
 
 export default {
+	components: {
+		PlusSign,
+		MinusSign,
+	},
 	computed: {
 		...mapGetters(['getTransactions']),
+	},
+	methods: {
+		removeTransaction(index) {
+			this.$store
+				.dispatch('showModal')
+				.then(() => this.$store.dispatch('removeTransaction', index));
+		},
 	},
 };
 </script>
