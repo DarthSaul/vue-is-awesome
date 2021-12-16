@@ -9,6 +9,11 @@ const routes = [
     component: () => import("layouts/Login.vue"),
     children: [{ path: "", component: () => import("pages/Login.vue") }],
   },
+  {
+    path: "/sign_up",
+    component: () => import("layouts/Login.vue"),
+    children: [{ path: "", component: () => import("pages/SignUp.vue") }],
+  },
 
   // Always leave this as last one,
   // but you can also remove it

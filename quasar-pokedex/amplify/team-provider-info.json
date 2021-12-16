@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-quasarpokedex-dev-131146-authRole",
+      "UnauthRoleArn": "arn:aws:iam::236623339682:role/amplify-quasarpokedex-dev-131146-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::236623339682:role/amplify-quasarpokedex-dev-131146-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-quasarpokedex-dev-131146-deployment",
+      "UnauthRoleName": "amplify-quasarpokedex-dev-131146-unauthRole",
+      "StackName": "amplify-quasarpokedex-dev-131146",
+      "StackId": "arn:aws:cloudformation:us-east-2:236623339682:stack/amplify-quasarpokedex-dev-131146/a2f24150-5e9b-11ec-91fb-0267b173ea5e",
+      "AmplifyAppId": "d19sf9xmbl4bsn"
+    },
+    "categories": {
+      "auth": {
+        "quasarpokedex26ba328d": {}
+      }
+    }
+  }
+}

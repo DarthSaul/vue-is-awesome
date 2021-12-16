@@ -1,5 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
+    <HeaderDrawer />
+
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -7,9 +9,17 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {};
+import HeaderDrawer from "components/HeaderDrawer.vue";
+
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  name: "Login",
+
+  components: {
+    HeaderDrawer,
   },
-};
+
+  setup() {},
+});
 </script>
